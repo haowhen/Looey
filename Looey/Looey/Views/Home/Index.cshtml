@@ -1,15 +1,23 @@
 ﻿@model Looey.Models.TestModel
+
 @{
     ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
 <div class="jumbotron"><p>Some random text</p></div>
 
-<input name="files" id="files" type="file" />
+@Html.LabelFor(m => m.Property)
+@Html.TextBoxFor(m => m.Property)
+
+<input type="submit"/>
+<input id="datepickerzzz" value="10/10/2011" style="width:200px;" />
 
 <script>
-    $('#files').kendoUpload();
+    $(document).ready(function () {
+        $('#datepickerzzz').kendoDatePicker();
+    });
 </script>
 
